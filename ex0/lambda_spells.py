@@ -27,17 +27,17 @@ def mage_stats(mages: list[dict]) -> dict:
 
 
 if __name__ == "__main__":
-    artifacts: list[dict] = ([
+    artifacts: list[dict] = [
         {'name': 'Staff', 'power': 89, 'type': 'Fire'},
         {'name': 'Orb', 'power': 97, 'type': 'Crystal'},
         {'name': 'Sword', 'power': 94, 'type': 'Ice'}
-    ])
-    mages: list[dict] = ([
+    ]
+    mages: list[dict] = [
         {'name': 'Peter', 'power': 99, 'element': 'Earth'},
         {'name': 'Tom', 'power': 77, 'element': 'Wind'},
         {'name': 'Alexandra', 'power': 86, 'element': 'Water'},
         {'name': 'Brenda', 'power': 91, 'element': 'Fire'}
-    ])
+    ]
     spells: list[str] = [
         "fireball", "heal", "shield", "watersplash"
     ]
@@ -60,4 +60,7 @@ if __name__ == "__main__":
         print(spell, end=" ")
     print()
     print("\nTesting mage stats")
-    print(mage_stats(mages))
+    m_s = mage_stats(mages)
+    print(f"Max power: {m_s['max_power']}")
+    print(f"Min power: {m_s['min_power']}")
+    print(f"Average power: {m_s['avg_power']}")
